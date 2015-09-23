@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+/**
+*   Hello world application   
+*   Made by: Nikola Jankovic
+*/
+
+
+int main(void)
+{
+    printf("hello, world\n");
+}

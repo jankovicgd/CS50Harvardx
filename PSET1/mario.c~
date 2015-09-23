@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <cs50.h>
+#include
+
+/**
+*   Mario - print hashes corresponding to specified height
+*   Author: Nikola Jankovic
+*/
+
+int main(void)
+{
+    // Prompt the user for height  
+     
+    do
+    {
+        printf("Specify the height of the pyramid:");
+        int height = GetInt();
+    }
+    while(height < 0 && height > 23);
+
+}
