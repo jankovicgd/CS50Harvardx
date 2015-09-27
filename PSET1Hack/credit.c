@@ -49,48 +49,50 @@ bool checksum(long long x)
     int checksum1 = 0;
     
     // calculating checksum
-    if (strlen(y)%2 == 0)
+    if (strlen(y) % 2 == 0)
     {
-        for (int i = 0, z = strlen(y); i < z; i += 2)
+        // calculating for even numbers
+        for (int i = 0, length = strlen(y); i < length; i += 2)
         {
             if (((y[i] - 48) * 2) >= 10)
             {
                 // if the number*2 is greater or equal to 10
-                int number = (y[i] - 48)*2;
-                checksum1 += number/10 + ((float)number/10 - 1)*10;
+                int n = (y[i] - 48) * 2;
+                checksum1 += n / 10 + ( ( float ) n / 10 - 1) * 10;
             }
             else
             {
                 checksum1 += (y[i] - 48) * 2;
             }            
         }
-        for (int j = 1, z = strlen(y); j < z; j += 2)
+        for (int j = 1, length = strlen(y); j < length; j += 2)
         {
             checksum1 += (y[j] - 48);
         }        
     }
     else
     {
-        for (int i = 1, z = strlen(y); i < z ; i += 2)
+        // calculating for odd numbers
+        for (int i = 1, length = strlen(y); i < length ; i += 2)
         {
             if (((y[i] - 48) * 2) >= 10)
             {
                 // if the number*2 is greater or equal to 10
-                int number = (y[i] - 48)*2;
-                checksum1 += number/10 + ((float)number/10 - 1)*10;
+                int n = (y[i] - 48) * 2;
+                checksum1 += n / 10 + ( ( float ) n / 10 - 1) * 10;
             }
             else
             {
                 checksum1 += (y[i] - 48) * 2;
             }
         }
-        for (int j = 0, z = strlen(y); j <= z; j += 2)
+        for (int j = 0, length = strlen(y); j <= length; j += 2)
         {
             checksum1 += (y[j] - 48);
         }        
     }    
 
-    if(checksum1%10 == 0)
+    if (checksum1 % 10 == 0)
         return true;
     else
         return false;
@@ -116,7 +118,8 @@ bool isAmex(long long x)
 {
     char y[256];
     sprintf(y,"%lld",x);
-    if (y[0] == 51 && (y[1] == 52 || y[1] == 55) && checksum(x) == true && strlen(y) == 15)
+    if (y[0] == 51 && (y[1] == 52 || y[1] == 55) 
+    && checksum(x) == true && strlen(y) == 15)
     {
         return true;
     }
@@ -131,7 +134,9 @@ bool isMaster(long long x)
 {
     char y[256];
     sprintf(y,"%lld",x);
-    if (y[0] == 53 && (y[1] == 49 || y[1] == 50 || y[1] == 51 || y[1] == 52 || y[1] == 53) && checksum(x) == true && strlen(y) == 16)
+    if (y[0] == 53 && 
+    (y[1] == 49 || y[1] == 50 || y[1] == 51 || y[1] == 52 || y[1] == 53) && 
+    checksum(x) == true && strlen(y) == 16)
     {
         return true;
     }
