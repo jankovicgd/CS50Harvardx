@@ -1,13 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include <cs50.h>
-#include <ctype.h>
-
 /*
 *   Program that gets the initials of the user
 *   Author: Nikola Jankovic
 */
 
+#include <stdio.h>
+#include <string.h>
+#include <cs50.h>
+#include <ctype.h>
 
 int main(void)
 {

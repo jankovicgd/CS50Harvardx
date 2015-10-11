@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <cs50.h>
-#include <math.h>
-
 /**
 *   Application that calculates the lowest ammount of coin returned
 *   Author: Nikola Jankovic
 */
+
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
 
 int main(void)
 {

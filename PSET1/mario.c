@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <cs50.h>
-
 /**
 *   Mario - print hashes corresponding to specified height
 *   Author: Nikola Jankovic
 */
+
+#include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
