@@ -15,7 +15,7 @@ int main(void)
     printf("%c", toupper(name[0]));
     for (int i = 1, n = strlen(name); i < n; i++)
     {
-        if (name[i - 1] ==  (char) 32)
+        if (name[i - 1] == (char) 32)
             printf("%c", toupper(name[i]));
     }
     printf("\n");
