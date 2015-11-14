@@ -32,22 +32,48 @@ bool search(int value, int values[], int n)
     return false;
 }
  */
+ 
+ /**
+ * Returns true if value is in array of n values, else false.
+ */
 bool search(int value, int values[], int n)
 {
-    int min = values[0];
-    int max = values[n - 1];
+    if (n < 0)
+        return -1;
+    
+    int max = n - 1;
+    int min = 0;
+    int midpoint;
+    int midvalue;
+    bool f;
+    
     do
     {
-        if(n%2 == 0)
+        if (max < min)
         {
-        
+            f = 0;
+            break;
         }
         else
         {
-        
+            midpoint = (max + min) / 2;
+            if (values[midpoint] < value)
+            {
+                min = midpoint + 1;
+            }
+            else if (values[midpoint] > value)
+            {
+                max = midpoint - 1;
+            }
+            else
+            {
+                midvalue = values[midpoint];
+                f = 1;
+            }
         }
+    }while (midvalue != value);
     
-    }while (current != value)
+    return f;
 }
 /**
  * Sorts array of n values.
